@@ -8,6 +8,11 @@ const AndroidNotificationChannel channel = AndroidNotificationChannel(
     "This channel is used important notification",
     groupId: "Notification_group");
 
+// const AndroidNotificationChannelGroup groupname = AndroidNotificationChannelGroup(
+//     'high_importance_channel',  "High Importance Notifcations",
+//   description:  "This channel is used important notification");
+
+
 final FlutterLocalNotificationsPlugin flutterLocalNotificationplugin =
     FlutterLocalNotificationsPlugin();
 
@@ -24,8 +29,18 @@ class FirebaseNotifcation {
 
     await flutterLocalNotificationplugin
         .resolvePlatformSpecificImplementation<
-            AndroidFlutterLocalNotificationsPlugin>()
+        AndroidFlutterLocalNotificationsPlugin>()
         ?.createNotificationChannel(channel);
+
+
+    // await flutterLocalNotificationplugin
+    //     .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()
+    //     .createNotificationChannelGroup(groupname);
+
+
+
+
+
     var intializationSettingsAndroid =
         AndroidInitializationSettings('@mipmap/ic_launcher');
     var initializationSettings =
